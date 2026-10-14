@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Kelas 7 - Bilangan Rasional (SMP Almazaya Islamic School)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-600 p-3 rounded-2xl shadow-md border border-emerald-500/50 flex items-center justify-center text-2xl font-bold">
+                    🕌
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-wider text-emerald-300 font-semibold bg-emerald-900/60 px-2.5 py-1 rounded-full border border-emerald-700/50">SMP Almazaya Islamic School</span>
+                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight mt-1">Bab 2: Bilangan Rasional</h1>
+                    <p class="text-xs text-teal-200">Guru Pengampu: Mr. Taqwa • Matematika Kelas VII</p>
+                </div>
+            </div>
+            <!-- Quick Navigation Tabs -->
+            <nav class="flex flex-wrap gap-2 justify-center bg-slate-900/40 p-1.5 rounded-2xl border border-teal-700/40 backdrop-blur-md">
+                <button onclick="switchTab('pengantar')" id="btn-pengantar" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-emerald-600 text-white shadow-sm flex items-center gap-2">
+                    <i class="fa-solid fa-compass"></i> Pengantar
+                </button>
+                <button onclick="switchTab('materi')" id="btn-materi" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:bg-emerald-700/50 flex items-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Materi Inti
+                </button>
+                <button onclick="switchTab('latihan')" id="btn-latihan" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:bg-emerald-700/50 flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square"></i> Latihan Interaktif
+                </button>
+                <button onclick="switchTab('evaluasi')" id="btn-evaluasi" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-emerald-100 hover:bg-emerald-700/50 flex items-center gap-2">
+                    <i class="fa-solid fa-award"></i> Kuis Mandiri
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ================= TAB 1: PENGANTAR ================= -->
+        <div id="tab-pengantar" class="tab-content active animate-fade-in space-y-8">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-900 via-teal-800 to-slate-900 text-white shadow-2xl p-6 sm:p-10 border border-emerald-700/30">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-block bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full border border-teal-400/30 mb-4">Kurikulum Merdeka • Semester 1</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Mengapa Perlu Bilangan Rasional?</h2>
+                    <p class="text-teal-100 text-base sm:text-lg leading-relaxed mb-6">
+                        Di Bab 1 kita telah mempelajari bilangan bulat. Namun, dalam kehidupan sehari-hari, bilangan bulat saja tidak cukup untuk menyatakan besaran yang tidak utuh. Mari temukan jawabannya melalui ilustrasi berikut!
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="switchTab('materi')" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <span>Mulai Belajar</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('latihan')" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-xl backdrop-blur-md border border-white/20 transition">
+                            Coba Latihan Interaktif
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contextual Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Pizza Card -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                        🍕
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Sisa Pizza</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Setelah dimakan sebagian, masih ada <strong class="text-emerald-700 font-bold">5/8 bagian</strong> pizza. Pecahan ini mewakili bagian dari keseluruhan.
+                    </p>
+                </div>
+                <!-- Thermometer Card -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-100 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                        🌡️
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Suhu Badan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Saat pengecekan suhu di tempat umum, tertera angka <strong class="text-emerald-700 font-bold">36,6 °C</strong>. Bilangan desimal digunakan untuk keakuratan tinggi.
+                    </p>
+                </div>
+                <!-- Internet Speed Card -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center text-3xl mb-4 shadow-inner">
+                        📶
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Kecepatan Internet</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Kecepatan unduh tercatat <strong class="text-emerald-700 font-bold">15,22 Mbps</strong> dan unggah <strong class="text-emerald-700 font-bold">2,37 Mbps</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Learning Objectives -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-800 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900">Tujuan Pembelajaran Bab 2</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span class="text-sm font-medium text-slate-700">Mengidentifikasi bilangan yang termasuk bilangan rasional.</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span class="text-sm font-medium text-slate-700">Menyatakan bilangan rasional dalam bentuk pecahan dan desimal.</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span class="text-sm font-medium text-slate-700">Membandingkan bilangan rasional dan menaksir nilainya.</span>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                        <span class="text-sm font-medium text-slate-700">Melakukan operasi hitung serta memecahkan masalah kontekstual.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 2: MATERI INTI ================= -->
+        <div id="tab-materi" class="tab-content space-y-8 animate-fade-in">
+            <!-- Section Header -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                <div class="max-w-3xl">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Materi Teori Buku Paket Kls 7</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 mb-4">Pengertian & Konsep Bilangan Rasional</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Sebelum masuk ke bilangan rasional, mari ingat kembali hirarki bilangan yang telah kalian pelajari dari Sekolah Dasar hingga Bab 1 SMP.
+                    </p>
+                </div>
+
+                <!-- Number Hierarchy Table -->
+                <div class="overflow-x-auto rounded-2xl border border-slate-200 mb-8">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-emerald-900 text-white text-sm">
+                                <th class="p-4 font-bold">Jenis Bilangan</th>
+                                <th class="p-4 font-bold">Contoh Anggota / Bentuk</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 font-semibold text-emerald-800">Bilangan Asli</td>
+                                <td class="p-4 text-slate-600">1, 2, 3, 4, 5, ...</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 font-semibold text-emerald-800">Bilangan Cacah</td>
+                                <td class="p-4 text-slate-600">0, 1, 2, 3, 4, ...</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-4 font-semibold text-emerald-800">Bilangan Bulat</td>
+                                <td class="p-4 text-slate-600">..., -3, -2, -1, 0, 1, 2, 3, ...</td>
+                            </tr>
+                            <tr class="hover:bg-emerald-50/55 font-medium">
+                                <td class="p-4 font-bold text-emerald-900">Bilangan Rasional</td>
+                                <td class="p-4 text-slate-900">Semua bilangan yang dapat dinyatakan dalam bentuk <strong>a/b</strong> dengan a & b bilangan bulat dan <strong>b ≠ 0</strong>. (Contoh: -1/2, 0,4, 3/4, 2,25)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Definition Box -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-200 text-emerald-900 mb-6">
+                    <h4 class="font-extrabold text-lg mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-amber-500"></i> Definisi Penting
+                    </h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        Bilangan rasional adalah bilangan yang dapat dituliskan sebagai pembagian dua bilangan bulat <code class="bg-white px-2 py-0.5 rounded border border-emerald-200 font-mono font-bold text-emerald-800">a/b</code> di mana penyebut <code class="bg-white px-2 py-0.5 rounded border border-emerald-200 font-mono font-bold text-emerald-800">b ≠ 0</code>.
+                    </p>
+                    <div class="bg-white/80 p-4 rounded-xl border border-emerald-200/60 text-xs sm:text-sm font-semibold text-slate-800">
+                        ❓ <strong>Mengapa b tidak boleh nol?</strong><br>
+                        Karena pembagian dengan nol (misal 5/0) adalah tidak terdefinisi dalam matematika.
+                    </div>
+                </div>
+
+                <!-- Rational vs Irrational -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <h4 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-emerald-600"></span> Bilangan Rasional
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Pecahan biasa, pecahan campuran, desimal terbatas (misal 0,25), atau desimal tak terbatas yang berulang (misal 0,333...).
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <h4 class="font-bold text-slate-900 text-base mb-2 flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-amber-600"></span> Bilangan Irasional
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Bilangan desimal tak terbatas dan <strong>tidak berulang</strong>, seperti √2 (1,4142...), π (3,1415...), dan e (2,7182...).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 3: LATIHAN INTERAKTIF (DROP-DOWN & MATCHING) ================= -->
+        <div id="tab-latihan" class="tab-content space-y-8 animate-fade-in">
+            <!-- Header -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+                <div class="max-w-3xl mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Latihan Mandiri Buku Paket Hal. 47</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3 mb-2">Uji Pemahaman: Identifikasi Bilangan Rasional</h2>
+                    <p class="text-slate-600 text-sm sm:text-base">
+                        Pilih apakah bilangan-bilangan di bawah ini termasuk ke dalam <strong class="text-emerald-700">Bilangan Rasional</strong> atau <strong class="text-amber-700">Bilangan Irasional</strong> menggunakan menu pilihan di setiap soal.
+                    </p>
+                </div>
+
+                <!-- Interactive Quiz Dropdowns -->
+                <div class="space-y-4" id="quiz-dropdown-container">
+                    <!-- Soal 1 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 1</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">π / 3 (Pi per Tiga)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q1" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 2</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">-√(7) / 2 (Minus Akar 7 per 2)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q2" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 3</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">3,14 (Desimal Terbatas)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q3" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 4</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">18 / 2 = 9 (Pecahan Bulat)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q4" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 5 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 5</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">0,7320508... (Tak Beraturan)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q5" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 6 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 6</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">2 (1/e) (Pecahan dengan Konstanta e)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q6" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Soal 7 -->
+                    <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-xl">Soal 7</span>
+                            <span class="font-mono font-bold text-lg text-slate-800">22 / 7 (Pecahan Pendekatan Pi)</span>
+                        </div>
+                        <div class="w-full sm:w-64">
+                            <select id="q7" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition">
+                                <option value="">-- Pilih Jenis Bilangan --</option>
+                                <option value="rasional">Bilangan Rasional</option>
+                                <option value="irasional">Bilangan Irasional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit & Result Actions -->
+                <div class="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div id="quiz-feedback" class="text-sm font-semibold text-slate-600">
+                        Silakan jawab seluruh soal di atas, lalu klik tombol Periksa Jawaban.
+                    </div>
+                    <button onclick="checkDropdownQuiz()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-check-double"></i> Periksa Jawaban
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 4: KUIS MANDIRI ================= -->
+        <div id="tab-evaluasi" class="tab-content space-y-8 animate-fade-in">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 text-center max-w-2xl mx-auto">
+                <div class="w-20 h-20 rounded-3xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner">
+                    ⭐
+                </div>
+                <h2 class="text-2xl font-extrabold text-slate-900 mb-3">Selamat Belajar, Siswa Almazaya!</h2>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    Anda telah menyelesaikan modul interaktif Bab 2 Bilangan Rasional. Teruslah berlatih mengerjakan latihan soal di buku paket bersama Mr. Taqwa agar semakin mahir matematika!
+                </p>
+                <button onclick="switchTab('pengantar')" class="bg-emerald-800 hover:bg-emerald-900 text-white font-bold px-8 py-3 rounded-2xl shadow transition">
+                    Kembali ke Beranda
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 mt-12 text-center text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-medium text-slate-300">SMP Almazaya Islamic School • Matematika Kelas VII • Bab 2 Bilangan Rasional</p>
+            <p class="mt-1 text-slate-500">Dibuat khusus untuk pembelajaran interaktif siswa bersama Mr. Taqwa.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Tab Switching Function
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-sm');
+                btn.classList.add('text-emerald-100', 'hover:bg-emerald-700/50');
+            });
+
+            document.getElementById('tab-' + tabId).classList.add('active');
+            
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-emerald-100', 'hover:bg-emerald-700/50');
+                activeBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-sm');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Dropdown Quiz Verification
+        function checkDropdownQuiz() {
+            const answers = {
+                q1: 'irasional', // pi/3
+                q2: 'irasional', // -sqrt(7)/2
+                q3: 'rasional',  // 3,14
+                q4: 'rasional',  // 18/2 = 9
+                q5: 'irasional', // 0.7320508...
+                q6: 'irasional', // 2(1/e)
+                q7: 'rasional'   // 22/7
+            };
+
+            let score = 0;
+            let total = Object.keys(answers).length;
+            let allAnswered = true;
+
+            for (let key in answers) {
+                const selectEl = document.getElementById(key);
+                const val = selectEl.value;
+                
+                // Reset styling
+                selectEl.classList.remove('border-emerald-500', 'border-rose-500', 'bg-emerald-50', 'bg-rose-50');
+
+                if (!val) {
+                    allAnswered = false;
+                    selectEl.classList.add('border-rose-300');
+                } else if (val === answers[key]) {
+                    score++;
+                    selectEl.classList.add('border-emerald-500', 'bg-emerald-50');
+                } else {
+                    selectEl.classList.add('border-rose-500', 'bg-rose-50');
+                }
+            }
+
+            const feedbackEl = document.getElementById('quiz-feedback');
+            if (!allAnswered) {
+                feedbackEl.innerHTML = '<span class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Harap isi semua pilihan jawaban sebelum memeriksa!</span>';
+            } else if (score === total) {
+                feedbackEl.innerHTML = `<span class="text-emerald-700 font-bold text-base"><i class="fa-solid fa-circle-check"></i> Luar biasa! Skor Anda ${score}/${total} (Semua Benar 🎉). Pertahankan prestasi cemerlangmu!</span>`;
+            } else {
+                feedbackEl.innerHTML = `<span class="text-rose-700 font-bold text-base"><i class="fa-solid fa-circle-xmark"></i> Skor Anda ${score}/${total}. Kotak hijau adalah benar, kotak merah silakan dicoba ulang!</span>`;
+            }
+        }
+    </script>
+</body>
+</html>
